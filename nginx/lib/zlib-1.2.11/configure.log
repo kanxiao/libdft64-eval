@@ -1,68 +1,68 @@
 --------------------
 ./configure
-Mon Feb 17 23:48:55 PST 2020
-=== ztest36536.c ===
+Wed Feb 19 03:29:05 CST 2020
+=== ztest11994.c ===
 extern int getchar();
 int hello() {return getchar();}
 ===
-gcc -c ztest36536.c
+gcc -c ztest11994.c
 ... using gcc
 
 Checking for obsessive-compulsive compiler options...
-=== ztest36536.c ===
+=== ztest11994.c ===
 int foo() { return 0; }
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe ztest11994.c
 
 Checking for shared library support...
-=== ztest36536.c ===
+=== ztest11994.c ===
 extern int getchar();
 int hello() {return getchar();}
 ===
-gcc -w -c -g -O0 -mno-avx -fno-stack-protector -pipe -fPIC ztest36536.c
-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -g -O0 -mno-avx -fno-stack-protector -pipe -fPIC -o ztest36536.so ztest36536.o
+gcc -w -c -g -O0 -mno-avx -fno-stack-protector -pipe -fPIC ztest11994.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -g -O0 -mno-avx -fno-stack-protector -pipe -fPIC -o ztest11994.so ztest11994.o
 Building shared library libz.so.1.2.11 with gcc.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <stdio.h>
 #include <stdlib.h>
 size_t dummy = 0;
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe ztest11994.c
 Checking for size_t... Yes.
 
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <sys/types.h>
 off64_t dummy = 0;
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest11994.c
 Checking for off64_t... Yes.
 Checking for fseeko... Yes.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <string.h>
 #include <errno.h>
 int main() { return strlen(strerror(errno)); }
 ===
-gcc -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 -o ztest36536 ztest36536.c
+gcc -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 -o ztest11994 ztest11994.c
 Checking for strerror... Yes.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <unistd.h>
 int main() { return 0; }
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest11994.c
 Checking for unistd.h... Yes.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <stdarg.h>
 int main() { return 0; }
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest11994.c
 Checking for stdarg.h... Yes.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <stdio.h>
 #include <stdarg.h>
 #include "zconf.h"
@@ -74,10 +74,10 @@ int main()
   return 0;
 }
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest11994.c
 Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <stdio.h>
 #include <stdarg.h>
 int mytest(const char *fmt, ...)
@@ -94,10 +94,10 @@ int main()
   return (mytest("Hello%d\n", 1));
 }
 ===
-gcc -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 -o ztest36536 ztest36536.c
+gcc -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 -o ztest11994 ztest11994.c
 Checking for vsnprintf() in stdio.h... Yes.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #include <stdio.h>
 #include <stdarg.h>
 int mytest(const char *fmt, ...)
@@ -115,10 +115,10 @@ int main()
   return (mytest("Hello%d\n", 1));
 }
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest11994.c
 Checking for return value of vsnprintf()... Yes.
 
-=== ztest36536.c ===
+=== ztest11994.c ===
 #define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
 int ZLIB_INTERNAL foo;
 int main()
@@ -126,7 +126,7 @@ int main()
   return 0;
 }
 ===
-gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest36536.c
+gcc -c -g -O0 -mno-avx -fno-stack-protector -pipe -D_LARGEFILE64_SOURCE=1 ztest11994.c
 Checking for attribute(visibility) support... Yes.
 
 ALL = static shared all64

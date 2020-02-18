@@ -4,7 +4,7 @@ work_path=$(dirname $0)
 cd ./${work_path}
 nginx_root=$(pwd)
 
-echo $nginx_root
+#echo $nginx_root
 
 nginx_target_dir=$nginx_root"/bin"
 
@@ -12,8 +12,8 @@ nginx_src_dir=$nginx_root"/lib/nginx-1.16.0"
 pcre_dir=$nginx_root"/lib/pcre-8.43"
 zlib_dir=$nginx_root"/lib/zlib-1.2.11"
 
-echo $nginx_target_dir
-echo $nginx_src_dir
+#echo $nginx_target_dir
+#echo $nginx_src_dir
 
 cd $nginx_src_dir
 
